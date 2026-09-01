@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KOVA - Checkout</title>
+    <link rel="stylesheet" href="css/desktop/d-main.css" />
+  </head>
+  <body>
+    <header class="navbar-full">
+      <div class="navbar-container">
+        <span class="logo-badge">KOVA</span>
+        <nav class="nav-links">
+          <a href="01-shop-grid.html">Shop</a>
+          <a href="#">Categories</a>
+          <a href="#">Deals</a>
+          <a href="#">New in</a>
+        </nav>
+        <div class="search-bar">
+          <input type="text" placeholder="Search 194 products" />
+        </div>
+        <div class="nav-actions">
+          <a href="#" class="icon-btn">👤</a>
+          <a href="05-cart.html" class="cart-btn"
+            >🛒<span class="badge">3</span></a
+          >
+        </div>
+      </div>
+    </header>
+
+    <div class="page-container">
+      <div class="checkout-top-header">
+        <h1>Checkout</h1>
+        <div class="checkout-steps">
+          <div class="step-badge done">1 Cart</div>
+          <div class="step-divider"></div>
+          <div class="step-badge active">2 Delivery</div>
+          <div class="step-divider"></div>
+          <div class="step-badge">3 Payment</div>
+        </div>
+      </div>
+
+      <div class="checkout-layout">
+        <div class="checkout-form-col">
+          <div class="form-card">
+            <h2>Delivery address</h2>
+            <div class="form-row-2col">
+              <div class="input-group">
+                <label>First name</label>
+                <input type="text" value="Emily" />
+              </div>
+              <div class="input-group">
+                <label>Last name</label>
+                <input type="text" value="Johnson" />
+              </div>
+            </div>
+            <div class="input-group">
+              <label>Street address</label>
+              <input type="text" value="626 Main Street" />
+            </div>
+            <div class="form-row-3col">
+              <div class="input-group">
+                <label>City</label>
+                <input type="text" value="Phoenix" />
+              </div>
+              <div class="input-group">
+                <label>State</label>
+                <input type="text" value="Mississippi" />
+              </div>
+              <div class="input-group">
+                <label>Postal code</label>
+                <input type="text" value="29112" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <h2>Delivery method</h2>
+            <label class="delivery-option selected">
+              <input type="radio" name="delivery" checked />
+              <div class="delivery-details">
+                <strong>Standard</strong>
+                <span>Ships in 1 month · free</span>
+              </div>
+              <span class="delivery-price">$0.00</span>
+            </label>
+            <label class="delivery-option">
+              <input type="radio" name="delivery" />
+              <div class="delivery-details">
+                <strong>Express</strong>
+                <span>2–3 business days</span>
+              </div>
+              <span class="delivery-price">$14.00</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="checkout-summary-col">
+          <div class="cart-summary-card">
+            <h3>Order summary</h3>
+            <div class="summary-item-row">
+              <div class="mini-thumb">
+                <span class="qty-bubble">24</span>
+                <img
+                  src="02-assets/product-placeholders/ph-beauty.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="mini-info">
+                <strong>Essence Mascara Lash Princess</strong>
+              </div>
+              <span class="mini-price">$222.48</span>
+            </div>
+            <div class="summary-item-row">
+              <div class="mini-thumb">
+                <span class="qty-bubble">2</span>
+                <img
+                  src="02-assets/product-placeholders/ph-sports.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="mini-info">
+                <strong>Cricket Helmet</strong>
+              </div>
+              <span class="mini-price">$79.66</span>
+            </div>
+            <div class="summary-item-row">
+              <div class="mini-thumb">
+                <span class="qty-bubble">1</span>
+                <img
+                  src="02-assets/product-placeholders/ph-laptops.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="mini-info">
+                <strong>Apple AirPods Max Silver</strong>
+              </div>
+              <span class="mini-price">$536.79</span>
+            </div>
+            <hr class="summary-divider" />
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span>$879.73</span>
+            </div>
+            <div class="summary-row">
+              <span>Discounts</span>
+              <span class="discount-num">-$40.80</span>
+            </div>
+            <div class="summary-row">
+              <span>Shipping</span>
+              <span>Free</span>
+            </div>
+            <hr class="summary-divider" />
+            <div class="summary-row total-row">
+              <span>Total</span>
+              <span>$838.93</span>
+            </div>
+            <a href="07-order-confirmation.html" class="btn-checkout-main"
+              >Place order</a
+            >
+            <div class="summary-api-note">
+              Simulated — nothing persists on the server.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <span class="footer-logo">KOVA</span>
+          <p>
+            194 products across 24 categories. Every price, rating and stock
+            level comes straight from the API.
+          </p>
+          <span class="footer-meta">Kova — a teaching storefront</span>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="#">All products</a>
+          <a href="#">Categories</a>
+          <a href="#">Deals</a>
+          <a href="#">New in</a>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <a href="#">Sign in</a>
+          <a href="#">My cart</a>
+          <a href="#">Order history</a>
+          <a href="#">Wishlist</a>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <a href="#">Shipping</a>
+          <a href="#">Returns</a>
+          <a href="#">Warranty</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </footer>
+    <script src="js/checkout.js"></script>
+  </body>
+</html>
