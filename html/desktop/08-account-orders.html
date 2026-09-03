@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kova - Account & Orders</title>
+    <link rel="stylesheet" href="../../css/desktop/d-main.css" />
+    <link rel="stylesheet" href="../../css/state/s-main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-left">
+        <a href="01-home.html" class="logo">KOVA</a>
+        <nav class="header-nav">
+          <a href="02-product-listing.html">Shop</a>
+          <a href="02-product-listing.html">Categories</a>
+          <a href="02-product-listing.html">Deals</a>
+          <a href="02-product-listing.html">New in</a>
+        </nav>
+      </div>
+
+      <div class="header-right">
+        <form id="search-form" class="header-search">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#9ca3af"
+            stroke-width="2"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search 194 products..."
+          />
+        </form>
+        <a href="07-login.html" class="icon-link">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#111827"
+            stroke-width="2"
+          >
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </a>
+        <a href="05-cart.html" class="icon-link cart-link">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#111827"
+            stroke-width="2"
+          >
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span id="cart-badge" class="badge">0</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="section-container account-page-container">
+      <div class="account-profile-banner">
+        <div class="account-user-info">
+          <div class="account-avatar">EJ</div>
+          <div>
+            <h2 class="account-user-name">Emily Johnson</h2>
+            <div class="account-user-email">
+              emilys • emily.johnson@dummyjson.com
+            </div>
+          </div>
+        </div>
+        <button class="sign-out-btn" onclick="signOut()">Sign out</button>
+      </div>
+
+      <div class="account-layout">
+        <aside class="account-sidebar">
+          <a href="#" class="sidebar-link">Profile</a>
+          <a href="#" class="sidebar-link active">Order history</a>
+          <a href="#" class="sidebar-link">Addresses</a>
+          <a href="#" class="sidebar-link">Wishlist</a>
+          <a href="#" class="sidebar-link">Settings</a>
+        </aside>
+
+        <div class="account-content">
+          <section class="account-section">
+            <h3 class="section-heading">Order history</h3>
+            <div class="orders-table-wrapper">
+              <table class="orders-table">
+                <thead>
+                  <tr>
+                    <th>ORDER</th>
+                    <th>DATE</th>
+                    <th>ITEMS</th>
+                    <th>TOTAL</th>
+                    <th>STATUS</th>
+                  </tr>
+                </thead>
+                <tbody id="orders-table-body">
+                  <tr>
+                    <td>#53</td>
+                    <td>20 May 2026</td>
+                    <td>3 products</td>
+                    <td>$4,288.93</td>
+                    <td>
+                      <span class="status-badge delivered">Delivered</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#42</td>
+                    <td>11 May 2026</td>
+                    <td>2 products</td>
+                    <td>$1,899.41</td>
+                    <td><span class="status-badge shipped">Shipped</span></td>
+                  </tr>
+                  <tr>
+                    <td>#35</td>
+                    <td>02 Apr 2026</td>
+                    <td>3 products</td>
+                    <td>$2,140.09</td>
+                    <td>
+                      <span class="status-badge delivered">Delivered</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="account-section wishlist-section">
+            <div class="wishlist-header-group">
+              <span class="wishlist-mini-label">SAVED FOR LATER</span>
+              <h3 class="section-heading">Wishlist</h3>
+            </div>
+            <div id="wishlist-grid" class="wishlist-grid">
+              <div class="wishlist-card">
+                <div class="wishlist-card-top">
+                  <span class="discount-badge">-9%</span>
+                  <button class="wishlist-fav-btn active">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      stroke="currentColor"
+                    >
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="wishlist-img-box bg-tint-0">
+                  <img
+                    src="https://cdn.dummyjson.com/products/images/groceries/Green%20Bell%20Pepper/thumbnail.png"
+                    alt="Green Bell Pepper"
+                  />
+                </div>
+                <div class="wishlist-card-content">
+                  <div class="wishlist-category">Groceries</div>
+                  <div class="wishlist-item-title">Green Bell Pepper</div>
+                  <div class="wishlist-rating">★★★★☆ 4.28</div>
+                  <div class="wishlist-price-row">
+                    <span class="wishlist-price">$1.18</span>
+                    <button class="add-to-cart-small-btn">Add to cart</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="wishlist-card">
+                <div class="wishlist-card-top">
+                  <span class="discount-badge">-17%</span>
+                  <button class="wishlist-fav-btn active">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      stroke="currentColor"
+                    >
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="wishlist-img-box bg-tint-1">
+                  <img
+                    src="https://cdn.dummyjson.com/products/images/womens-bags/marc-jacobs-shoulder-bag/thumbnail.png"
+                    alt="Marc Jacobs Shoulder Bag"
+                  />
+                </div>
+                <div class="wishlist-card-content">
+                  <div class="wishlist-category">Womens Bags</div>
+                  <div class="wishlist-item-title">
+                    Marc Jacobs Shoulder Bag
+                  </div>
+                  <div class="wishlist-rating">★★★★☆ 4.31</div>
+                  <div class="wishlist-price-row">
+                    <span class="wishlist-price">$166.43</span>
+                    <button class="add-to-cart-small-btn">Add to cart</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="wishlist-card">
+                <div class="wishlist-card-top">
+                  <span class="discount-badge">-9%</span>
+                  <button class="wishlist-fav-btn active">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      stroke="currentColor"
+                    >
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="wishlist-img-box bg-tint-2">
+                  <img
+                    src="https://cdn.dummyjson.com/products/images/womens-jewellery/green-emerald-earring/thumbnail.png"
+                    alt="Green Emerald Earring"
+                  />
+                </div>
+                <div class="wishlist-card-content">
+                  <div class="wishlist-category">Womens Jewellery</div>
+                  <div class="wishlist-item-title">Green Emerald Earring</div>
+                  <div class="wishlist-rating">★★★★☆ 4.2</div>
+                  <div class="wishlist-price-row">
+                    <span class="wishlist-price">$951.29</span>
+                    <button class="add-to-cart-small-btn">Add to cart</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-brand-col">
+          <a href="01-home.html" class="logo">KOVA</a>
+          <p>
+            194 products across 24 categories. Every price, rating and stock
+            level comes straight from the API.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="02-product-listing.html">All products</a>
+          <a href="02-product-listing.html">Categories</a>
+          <a href="02-product-listing.html">Deals</a>
+          <a href="02-product-listing.html">New in</a>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <a href="07-login.html">Sign in</a>
+          <a href="05-cart.html">My cart</a>
+          <a href="08-account-orders.html">Order history</a>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <a href="#">Shipping</a>
+          <a href="#">Returns</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../../js/desktop/account-orders.js"></script>
+  </body>
+</html>

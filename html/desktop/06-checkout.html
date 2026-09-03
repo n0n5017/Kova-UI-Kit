@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kova - Checkout</title>
+    <link rel="stylesheet" href="../../css/desktop/d-main.css" />
+    <link rel="stylesheet" href="../../css/state/s-main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-left">
+        <a href="01-home.html" class="logo">KOVA</a>
+        <nav class="header-nav">
+          <a href="02-product-listing.html">Shop</a>
+          <a href="02-product-listing.html">Categories</a>
+          <a href="02-product-listing.html">Deals</a>
+          <a href="02-product-listing.html">New in</a>
+        </nav>
+      </div>
+
+      <div class="header-right">
+        <form id="search-form" class="header-search">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#9ca3af"
+            stroke-width="2"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search 194 products..."
+          />
+        </form>
+        <a href="07-login.html" class="icon-link">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#111827"
+            stroke-width="2"
+          >
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </a>
+        <a href="05-cart.html" class="icon-link cart-link">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#111827"
+            stroke-width="2"
+          >
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span id="cart-badge" class="badge">0</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="section-container">
+      <div class="checkout-top-bar">
+        <h1 class="page-title">Checkout</h1>
+        <div class="checkout-stepper">
+          <div class="step-pill completed"><span>1</span> Cart</div>
+          <div class="step-pill active"><span>2</span> Delivery</div>
+          <div class="step-pill"><span>3</span> Payment</div>
+        </div>
+      </div>
+
+      <div class="checkout-layout">
+        <div class="checkout-form-column">
+          <form id="checkout-form">
+            <div class="checkout-section-box">
+              <h3>Delivery address</h3>
+              <div class="form-row two-col">
+                <div class="form-group">
+                  <label>First name</label>
+                  <input type="text" id="first-name" value="Emily" required />
+                </div>
+                <div class="form-group">
+                  <label>Last name</label>
+                  <input type="text" id="last-name" value="Johnson" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Street address</label>
+                <input
+                  type="text"
+                  id="street-address"
+                  value="626 Main Street"
+                  required
+                />
+              </div>
+              <div class="form-row three-col">
+                <div class="form-group">
+                  <label>City</label>
+                  <input type="text" id="city" value="Phoenix" required />
+                </div>
+                <div class="form-group">
+                  <label>State</label>
+                  <input type="text" id="state" value="Mississippi" required />
+                </div>
+                <div class="form-group">
+                  <label>Postal code</label>
+                  <input type="text" id="postal-code" value="39110" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="checkout-section-box">
+              <h3>Delivery method</h3>
+              <div class="delivery-options-stack">
+                <div class="delivery-options-stack">
+                  <label
+                    class="delivery-option-card selected"
+                    onclick="selectDelivery(0, this)"
+                  >
+                    <div class="delivery-top-row">
+                      <div class="delivery-radio-row">
+                        <input type="radio" name="delivery" checked />
+                        <span class="delivery-title">Standard</span>
+                      </div>
+                      <span class="delivery-price">$0.00</span>
+                    </div>
+                    <span class="delivery-desc">Ships in 1 month - free</span>
+                  </label>
+
+                  <label
+                    class="delivery-option-card"
+                    onclick="selectDelivery(14.88, this)"
+                  >
+                    <div class="delivery-top-row">
+                      <div class="delivery-radio-row">
+                        <input type="radio" name="delivery" />
+                        <span class="delivery-title">Express</span>
+                      </div>
+                      <span class="delivery-price">$14.88</span>
+                    </div>
+                    <span class="delivery-desc">2-3 business days</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="checkout-summary-card">
+          <h3>Order summary</h3>
+          <div id="checkout-items-list" class="checkout-items-list"></div>
+
+          <div class="summary-divider"></div>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="summary-subtotal">$879.73</span>
+          </div>
+          <div class="summary-row">
+            <span>Discounts</span>
+            <span id="summary-discount" class="discount-val">-$40.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span id="summary-shipping">Free</span>
+          </div>
+          <div class="summary-divider"></div>
+          <div class="summary-row total-row">
+            <span>Total</span>
+            <span id="summary-total">$838.93</span>
+          </div>
+
+          <button type="button" class="place-order-btn" onclick="placeOrder()">
+            Place order
+          </button>
+          <div class="summary-note">
+            Simulated—nothing persists on the server.
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-brand-col">
+          <a href="01-home.html" class="logo">KOVA</a>
+          <p>
+            194 products across 24 categories. Every price, rating and stock
+            level comes straight from the API.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="02-product-listing.html">All products</a>
+          <a href="02-product-listing.html">Categories</a>
+          <a href="02-product-listing.html">Deals</a>
+          <a href="02-product-listing.html">New in</a>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <a href="07-login.html">Sign in</a>
+          <a href="05-cart.html">My cart</a>
+          <a href="08-account-orders.html">Order history</a>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <a href="#">Shipping</a>
+          <a href="#">Returns</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../../js/desktop/checkout.js"></script>
+  </body>
+</html>

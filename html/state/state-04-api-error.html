@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kova - API Error State</title>
+    <link rel="stylesheet" href="../../css/desktop/d-main.css" />
+    <link rel="stylesheet" href="../../css/state/s-main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-container">
+        <div class="brand-logo">
+          <span class="logo-mark"></span>
+          <span class="logo-text">KOVA</span>
+        </div>
+        <nav class="main-nav">
+          <a href="#" class="nav-item active">Shop</a>
+          <a href="#" class="nav-item">Categories</a>
+          <a href="#" class="nav-item">Deals</a>
+          <a href="#" class="nav-item">New in</a>
+        </nav>
+        <div class="search-box">
+          <svg
+            class="search-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" placeholder="Search 194 products" />
+        </div>
+        <div class="header-actions">
+          <button class="action-btn" aria-label="Account">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </button>
+          <button class="action-btn cart-btn" aria-label="Cart">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+              ></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-count">3</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-content state-center-container">
+      <div class="error-icon">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+          ></path>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+      </div>
+      <h1 class="empty-title">We couldn't load these products</h1>
+      <p class="empty-desc">
+        The request to the products endpoint failed. Check your<br />connection
+        and try again.
+      </p>
+      <div class="empty-actions">
+        <button class="btn btn-primary">Try again</button>
+        <a href="#" class="btn btn-secondary">Go to homepage</a>
+      </div>
+      <div class="api-error-badge">
+        <code>GET /products?limit=12&amp;skip=0 – 500</code>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-info">
+          <div class="brand-logo footer-logo">
+            <span class="logo-mark"></span>
+            <span class="logo-text">KOVA</span>
+          </div>
+          <p class="footer-desc">
+            194 products across 24 categories. Every price, rating and stock
+            level comes straight from the API.
+          </p>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-col">
+            <h4 class="footer-title">Shop</h4>
+            <a href="#">All products</a>
+            <a href="#">Categories</a>
+            <a href="#">Deals</a>
+            <a href="#">New in</a>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-title">Account</h4>
+            <a href="#">Sign in</a>
+            <a href="#">My cart</a>
+            <a href="#">Order history</a>
+            <a href="#">Wishlist</a>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-title">Help</h4>
+            <a href="#">Shipping</a>
+            <a href="#">Returns</a>
+            <a href="#">Warranty</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bar">
+        <span>Kova — a teaching storefront</span>
+        <span>Data: dummyjson.com</span>
+      </div>
+    </footer>
+
+    <script src="../../js/state/api-error.js"></script>
+  </body>
+</html>
