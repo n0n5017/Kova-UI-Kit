@@ -10,9 +10,15 @@
   <body>
     <header class="site-header">
       <div class="header-left">
-        <a href="01-home.html" class="logo">KOVA</a>
+        <a href="01-home.html" class="brand-link">
+          <img
+            src="../../02-assets/logo/kova-lockup.svg"
+            alt="KOVA"
+            class="site-logo"
+          />
+        </a>
         <nav class="header-nav">
-          <a href="02-product-listing.html">Shop</a>
+          <a href="02-product-listing.html" class="active">Shop</a>
           <a href="02-product-listing.html">Categories</a>
           <a href="02-product-listing.html">Deals</a>
           <a href="02-product-listing.html">New in</a>
@@ -87,9 +93,49 @@
             >
           </div>
           <div class="trust-badges">
-            <span>Ships in 24 hours</span>
-            <span>30-day returns</span>
-            <span>Warranty included</span>
+            <span>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#6b7280"
+                stroke-width="2"
+              >
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+              Ships in 24 hours
+            </span>
+            <span>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#6b7280"
+                stroke-width="2"
+              >
+                <polyline points="1 4 1 10 7 10"></polyline>
+                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+              </svg>
+              30-day returns
+            </span>
+            <span>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#6b7280"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              Warranty included
+            </span>
           </div>
         </div>
 
@@ -103,22 +149,26 @@
                 alt="Green Emerald Earring"
               />
             </div>
-            <div class="featured-category" id="featured-category">
-              WOMEN'S JEWELLERY
-            </div>
-            <div class="featured-info">
-              <div>
-                <h3 id="featured-title">Green Emerald Earring</h3>
-                <div class="rating-stars">
-                  &#9733;&#9733;&#9733;&#9733;&#9733;
-                  <span class="rating-count" id="featured-rating"
-                    >4.62 &middot; 3 reviews</span
+            <div class="featured-card-bottom">
+              <div class="featured-category" id="featured-category">
+                WOMEN'S JEWELLERY
+              </div>
+              <div class="featured-info">
+                <div>
+                  <h3 id="featured-title">Green Emerald Earring</h3>
+                  <div class="rating-stars">
+                    &#9733;&#9733;&#9733;&#9733;&#9733;
+                    <span class="rating-count" id="featured-rating"
+                      >4.62 &middot; 3 reviews</span
+                    >
+                  </div>
+                </div>
+                <div class="featured-price-block">
+                  <span class="old-price" id="featured-old-price">$999.99</span>
+                  <span class="featured-price" id="featured-price"
+                    >$951.30</span
                   >
                 </div>
-              </div>
-              <div class="featured-price-block">
-                <span class="old-price" id="featured-old-price">$999.99</span>
-                <span class="featured-price" id="featured-price">$951.30</span>
               </div>
             </div>
           </div>
@@ -157,39 +207,56 @@
     </main>
 
     <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-brand-col">
-          <a href="01-home.html" class="logo">KOVA</a>
+      <div class="footer-content">
+        <div class="footer-col brand-col">
+          <a href="#" class="footer-logo">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FFC700">
+              <path
+                d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"
+              />
+            </svg>
+            <span>KOVA</span>
+          </a>
           <p>
             194 products across 24 categories. Every price, rating and stock
             level comes straight from the API.
           </p>
         </div>
+
         <div class="footer-col">
           <h4>Shop</h4>
-          <a href="02-product-listing.html">All products</a>
-          <a href="02-product-listing.html">Categories</a>
-          <a href="02-product-listing.html">Deals</a>
-          <a href="02-product-listing.html">New in</a>
+          <ul>
+            <li><a href="#">All products</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Deals</a></li>
+            <li><a href="#">New in</a></li>
+          </ul>
         </div>
+
         <div class="footer-col">
           <h4>Account</h4>
-          <a href="07-login.html">Sign in</a>
-          <a href="05-cart.html">My cart</a>
-          <a href="08-account-orders.html">Order history</a>
-          <a href="#">Wishlist</a>
+          <ul>
+            <li><a href="#">Sign in</a></li>
+            <li><a href="#">My cart</a></li>
+            <li><a href="#">Order history</a></li>
+            <li><a href="#">Wishlist</a></li>
+          </ul>
         </div>
+
         <div class="footer-col">
           <h4>Help</h4>
-          <a href="#">Shipping</a>
-          <a href="#">Returns</a>
-          <a href="#">Warranty</a>
-          <a href="#">Contact</a>
+          <ul>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Warranty</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
         </div>
       </div>
+
       <div class="footer-bottom">
-        <p>Kova — a storefront project.</p>
-        <p>Data: dummyjson.com</p>
+        <span>Kova — a storefront project.</span>
+        <span>Data: dummyjson.com</span>
       </div>
     </footer>
 
